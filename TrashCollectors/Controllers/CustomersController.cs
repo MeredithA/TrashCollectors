@@ -39,7 +39,7 @@ namespace TrashCollectors.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
+  //          ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace TrashCollectors.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode,ScheduledPickUpDay,Balance")] Customer customer)
+        public ActionResult Create([Bind(Include = "ID,UserId,FirstName,LastName,StreetAddress,City,State,ZipCode,ScheduledPickUpDay")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace TrashCollectors.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", customer.UserId);
+           // ViewBag.UserId = new SelectList(db.Users, "Id", "Email", customer.UserId);
             return View(customer);
         }
 
@@ -82,7 +82,7 @@ namespace TrashCollectors.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode,ScheduledPickUpDay,Balance")] Customer customer)
+        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode,ScheduledPickUpDay")] Customer customer)
         {
             if (ModelState.IsValid)
             {

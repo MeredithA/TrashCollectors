@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/_ViewStart.cshtml";
+//    Layout = "~/Views/_ViewStart.cshtml";
 }
 
 <h2>Index</h2>
@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.StreetAddress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.City)
@@ -37,8 +37,6 @@
             @Html.DisplayNameFor(model => model.ScheduledPickUpDay)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Balance)
-        </th>
         <th></th>
     </tr>
 
@@ -54,7 +52,7 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Address)
+            @Html.DisplayFor(modelItem => item.StreetAddress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.City)
@@ -67,9 +65,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ScheduledPickUpDay)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Balance)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

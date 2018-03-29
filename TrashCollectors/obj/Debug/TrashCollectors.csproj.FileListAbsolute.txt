@@ -82,3 +82,11 @@ C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\D
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.pdb
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.creatingcustomerandemployeetables.resources
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.csproj.GenerateResource.Cache
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.fizedbugsincustomerandemplyeeview.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Net.Http.Formatting.dll
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.dll
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.WebHost.dll
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Net.Http.Formatting.xml
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.xml
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.WebHost.xml
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.addeddisplaynamesincustomerandemployeemodelsDeletedbalancefromcustomermodel.resources

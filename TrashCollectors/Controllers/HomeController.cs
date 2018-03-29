@@ -8,6 +8,7 @@ namespace TrashCollectors.Controllers
 {
     public class HomeController : Controller
     {
+       // [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
@@ -15,14 +16,14 @@ namespace TrashCollectors.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Schedule trash pick ups right at your fingertips!";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Us";
 
             return View();
         }

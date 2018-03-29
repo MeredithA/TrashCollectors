@@ -16,21 +16,26 @@ namespace TrashCollectors.Models
             public ApplicationUser User { get; set; }
             public string UserId { get; set; }
             //   [Required]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
-            //    [Required]
+        //    [Required]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
-            //  [Required]
+        //  [Required]
+            [Display(Name = "Street Address")]
             public string StreetAddress { get; set; }
             //    [Required]
             public string City { get; set; }
             //    [Required]
             public string State { get; set; }
-            //   [Required]
+        //   [Required]
+            [Display(Name = "Zip Code")]
             public int ZipCode { get; set; }
-            //    [Required]
+        //  [Required]
+            [Display(Name = "Weekly Pick Up Day")]
             public string ScheduledPickUpDay { get; set; }
 
 
-            public double Balance { get; set; }
+        //    public double Balance { get; set; }
     }
 }
