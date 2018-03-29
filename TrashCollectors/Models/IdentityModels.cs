@@ -32,6 +32,10 @@ namespace TrashCollectors.Models
 
         public System.Data.Entity.DbSet<TrashCollectors.Models.Customer> Customers { get; set; }
 
-     //   public System.Data.Entity.DbSet<TrashCollectors.Models.ApplicationUser> ApplicationUsers { get; set; }
+        public System.Data.Entity.DbSet<TrashCollectors.Models.Employee> Employees { get; set; }
+
+       // public System.Data.Entity.DbSet<TrashCollectors.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        //   public System.Data.Entity.DbSet<TrashCollectors.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
