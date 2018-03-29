@@ -203,13 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803291450534_adding customer database.cs" />
-    <Compile Include="Migrations\201803291450534_adding customer database.Designer.cs">
-      <DependentUpon>201803291450534_adding customer database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803291509190_Created Employee Model and Controller..cs" />
-    <Compile Include="Migrations\201803291509190_Created Employee Model and Controller..Designer.cs">
-      <DependentUpon>201803291509190_Created Employee Model and Controller..cs</DependentUpon>
+    <Compile Include="Migrations\201803291622343_creating customer and employee tables.cs" />
+    <Compile Include="Migrations\201803291622343_creating customer and employee tables.Designer.cs">
+      <DependentUpon>201803291622343_creating customer and employee tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -304,11 +300,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803291450534_adding customer database.resx">
-      <DependentUpon>201803291450534_adding customer database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803291509190_Created Employee Model and Controller..resx">
-      <DependentUpon>201803291509190_Created Employee Model and Controller..cs</DependentUpon>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803291622343_creating customer and employee tables.resx">
+      <DependentUpon>201803291622343_creating customer and employee tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

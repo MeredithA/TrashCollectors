@@ -80,6 +80,5 @@ C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\M
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.csprojResolveAssemblyReference.cache
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.pdb
-C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.addingcustomerdatabase.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.creatingcustomerandemployeetables.resources
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.csproj.GenerateResource.Cache
-C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.CreatedEmployeeModelandController.resources
