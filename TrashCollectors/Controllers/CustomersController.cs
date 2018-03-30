@@ -57,6 +57,8 @@ namespace TrashCollectors.Controllers
                 return RedirectToAction("Index");
             }
 
+                
+
            // ViewBag.UserId = new SelectList(db.Users, "Id", "Email", customer.UserId);
             return View(customer);
         }
