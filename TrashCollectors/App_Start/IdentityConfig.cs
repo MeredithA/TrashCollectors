@@ -13,6 +13,8 @@ using Microsoft.Owin.Security;
 using TrashCollectors.Models;
 
 namespace TrashCollectors
+
+//https://app.sendgrid.com/guide/integrate/langs/csharp
 {
     public class EmailService : IIdentityMessageService
     {

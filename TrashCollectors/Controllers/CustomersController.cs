@@ -15,6 +15,7 @@ namespace TrashCollectors.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Customers
+        [Authorize]
         public ActionResult Index()
         {
             var customers = db.Customers.Include(c => c.User);

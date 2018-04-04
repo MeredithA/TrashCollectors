@@ -38,7 +38,6 @@ C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\M
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Newtonsoft.Json.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Owin.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Helpers.dll
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Mvc.dll

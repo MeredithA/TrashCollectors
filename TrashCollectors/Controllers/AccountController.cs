@@ -12,7 +12,7 @@ using TrashCollectors.Models;
 
 namespace TrashCollectors.Controllers
 {
-    [Authorize]
+    [Authorize] 
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -20,6 +20,7 @@ namespace TrashCollectors.Controllers
 
         public AccountController()
         {
+            
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )

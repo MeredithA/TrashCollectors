@@ -24,9 +24,11 @@ namespace TrashCollectors.Models
         //  [Required]
             [Display(Name = "Street Address")]
             public string StreetAddress { get; set; }
-            //    [Required]
+        //    [Required]
+            [Display(Name = "City")]
             public string City { get; set; }
-            //    [Required]
+        //    [Required]
+            [Display(Name = "State")]
             public string State { get; set; }
         //   [Required]
             [Display(Name = "Zip Code")]

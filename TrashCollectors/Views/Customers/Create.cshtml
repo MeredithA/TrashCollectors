@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Customer Sign Up</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,14 +12,15 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Customer</h4>
+        <h5>All Fields are required to be filled out.</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+
+
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { placeholder = "James" } })          @*doesn't disapear when clicked*@
                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,15 +28,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { placeholder = "Brown" } })
                 @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
             </div>
         </div>
 
+
         <div class="form-group">
             @Html.LabelFor(model => model.StreetAddress, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StreetAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.StreetAddress, new { htmlAttributes = new { placeholder = "123 Abc St." } })
                 @Html.ValidationMessageFor(model => model.StreetAddress, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.City, new { htmlAttributes = new { placeholder = "Springfield" } })
                 @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +53,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.State, new { htmlAttributes = new { placeholder = "Alabama" } })
                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -59,7 +61,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.ZipCode, new { htmlAttributes = new { placeholder = "Zip Code" } })
                 @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -67,7 +69,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ScheduledPickUpDay, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ScheduledPickUpDay, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.ScheduledPickUpDay, new { htmlAttributes = new { placeholder = "dd/mm/yyyy" } })
                 @Html.ValidationMessageFor(model => model.ScheduledPickUpDay, "", new { @class = "text-danger" })
             </div>
         </div>
