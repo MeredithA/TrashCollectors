@@ -77,6 +77,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.8.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.9.9.0\lib\net452\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -152,9 +160,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -228,8 +233,21 @@
     <Compile Include="Migrations\201803292139130_added display names in customer and employee models. Deleted balance from customer model..Designer.cs">
       <DependentUpon>201803292139130_added display names in customer and employee models. Deleted balance from customer model..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804041909113_need new migration for something.cs" />
+    <Compile Include="Migrations\201804041909113_need new migration for something.Designer.cs">
+      <DependentUpon>201804041909113_need new migration for something.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804042340465_Created Billing Account table..cs" />
+    <Compile Include="Migrations\201804042340465_Created Billing Account table..Designer.cs">
+      <DependentUpon>201804042340465_Created Billing Account table..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804042346425_deleted unneeded info in employee model..cs" />
+    <Compile Include="Migrations\201804042346425_deleted unneeded info in employee model..Designer.cs">
+      <DependentUpon>201804042346425_deleted unneeded info in employee model..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BilingAccount.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -274,7 +292,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_GuestLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -308,6 +326,8 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Shared\_CustomerLayout.cshtml" />
+    <Content Include="Views\Shared\_EmployeeLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -332,6 +352,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803292139130_added display names in customer and employee models. Deleted balance from customer model..resx">
       <DependentUpon>201803292139130_added display names in customer and employee models. Deleted balance from customer model..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804041909113_need new migration for something.resx">
+      <DependentUpon>201804041909113_need new migration for something.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804042340465_Created Billing Account table..resx">
+      <DependentUpon>201804042340465_Created Billing Account table..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804042346425_deleted unneeded info in employee model..resx">
+      <DependentUpon>201804042346425_deleted unneeded info in employee model..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,16 +5,10 @@
 //    Layout = "~/Views/_ViewStart.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Home</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.User.Email)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
@@ -43,9 +37,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.User.Email)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
@@ -68,8 +59,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

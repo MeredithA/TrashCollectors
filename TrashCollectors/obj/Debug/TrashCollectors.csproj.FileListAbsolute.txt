@@ -89,3 +89,10 @@ C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\S
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.xml
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\System.Web.Http.WebHost.xml
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.addeddisplaynamesincustomerandemployeemodelsDeletedbalancefromcustomermodel.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\Newtonsoft.Json.dll
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\SendGrid.dll
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\SendGrid.pdb
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\SendGrid.xml
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.neednewmigrationforsomething.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.CreatedBillingAccounttable.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.deletedunneededinfoinemployeemodel.resources

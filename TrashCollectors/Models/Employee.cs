@@ -18,19 +18,10 @@ namespace TrashCollectors.Models
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
-        //    [Required]
+        [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        //  [Required]
-        [Display(Name = "Street Address")]
-        public string StreetAddress { get; set; }
-        //    [Required]
-        [Display(Name = "City")]
-        public string City { get; set; }
-        //    [Required]
-        [Display(Name = "State")]
-        public string State { get; set; }
-        //   [Required]
+        [Required]
         [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -18,7 +19,12 @@ namespace TrashCollectors.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.User);
+            string userid = User.Identity.GetUserId();
+            List<Customer> customers = (from row in db.Customers where row.UserId == userid select row).ToList();
+            if (customers.Count == 0)
+            {
+                return RedirectToAction("Create");
+            }
             return View(customers.ToList());
         }
 
@@ -53,14 +59,13 @@ namespace TrashCollectors.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.UserId = User.Identity.GetUserId();
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Customers"); //"customers added per mosh
             }
 
-                
-
-           // ViewBag.UserId = new SelectList(db.Users, "Id", "Email", customer.UserId);
+            // ViewBag.UserId = new SelectList(db.Users, "Id", "Email", customer.UserId);
             return View(customer);
         }
 
