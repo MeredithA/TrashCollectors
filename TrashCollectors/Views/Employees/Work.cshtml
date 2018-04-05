@@ -1,0 +1,8 @@
+﻿@model TrashCollectors.Models.WorkViewModel
+@{
+    ViewBag.Title = "Work";
+}
+
+<h2>Work</h2>
+<h5>Your Work Zip Code Is @Model.Employee.ZipCode  </h5> <p>@Html.ActionLink("Change", "Edit", new { id = Model.Employee.ID })</p>
+

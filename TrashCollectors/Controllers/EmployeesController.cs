@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,7 +18,12 @@ namespace TrashCollectors.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            var employees = db.Employees.Include(e => e.User);
+            string userid = User.Identity.GetUserId();
+            List<Employee> employees = (from row in db.Employees where row.UserId == userid select row).ToList();
+            if (employees.Count == 0)
+            {
+                return RedirectToAction("Create");
+            }
             return View(employees.ToList());
         }
 
@@ -48,17 +54,25 @@ namespace TrashCollectors.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode")] Employee employee)
+        public ActionResult Create([Bind(Include = "ID,UserId,FirstName,LastName,ZipCode")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                employee.UserId = User.Identity.GetUserId();
                 db.Employees.Add(employee);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Employees");
             }
-
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", employee.UserId);
             return View(employee);
+        }
+
+        public ActionResult Work()
+        {
+            string userID = User.Identity.GetUserId();
+            WorkViewModel model = new WorkViewModel();
+            model.Employee = (from row in db.Employees where row.UserId == userID select row).FirstOrDefault();
+            model.Customers = (from row in db.Customers where row.ZipCode == model.Employee.ZipCode select row).ToList();
+            return View(model);
         }
 
         // GET: Employees/Edit/5
@@ -82,7 +96,7 @@ namespace TrashCollectors.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode")] Employee employee)
+        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,ZipCode")] Employee employee)
         {
             if (ModelState.IsValid)
             {
