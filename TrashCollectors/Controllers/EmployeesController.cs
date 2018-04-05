@@ -75,6 +75,28 @@ namespace TrashCollectors.Controllers
             return View(model);
         }
 
+        public ActionResult PickUp(int? id)
+        {
+            BilingAccount BillingAccount;
+            try
+            {
+                BillingAccount = (from row in db.BillingAccounts where row.CustomerId == (int)id select row).First();
+                BillingAccount.Balance += 20;
+                BillingAccount.LastChargeDate = "Today";
+            }
+            catch
+            {
+                BillingAccount = new BilingAccount();
+                BillingAccount.CustomerId = (int)id;
+                BillingAccount.Balance = 20;
+                BillingAccount.LastChargeDate = "Today";
+                db.BillingAccounts.Add(BillingAccount);
+            }
+            db.SaveChanges();
+            return RedirectToAction("Work");
+
+        }
+
         // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
