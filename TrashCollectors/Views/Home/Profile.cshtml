@@ -1,0 +1,67 @@
+﻿@model List<TrashCollectors.Models.Customer>
+
+    @{
+        ViewBag.Title = "Profile";
+        //    Layout = "~/Views/_ViewStart.cshtml";
+    }
+
+    <h2>Profile</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].StreetAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ScheduledPickUpDay)
+            </th>
+            <th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScheduledPickUpDay)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                </td>
+            </tr>
+        }
+
+    </table>
