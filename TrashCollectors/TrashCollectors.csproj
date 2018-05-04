@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201804042346425_deleted unneeded info in employee model..Designer.cs">
       <DependentUpon>201804042346425_deleted unneeded info in employee model..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805032111082_updated customer model..cs" />
+    <Compile Include="Migrations\201805032111082_updated customer model..Designer.cs">
+      <DependentUpon>201805032111082_updated customer model..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BilingAccount.cs" />
@@ -258,7 +262,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -332,6 +335,8 @@
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\Work.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Customers\ViewBalance.cshtml" />
+    <Content Include="Views\Employees\PickedUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804042346425_deleted unneeded info in employee model..resx">
       <DependentUpon>201804042346425_deleted unneeded info in employee model..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805032111082_updated customer model..resx">
+      <DependentUpon>201805032111082_updated customer model..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

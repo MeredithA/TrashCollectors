@@ -21,7 +21,6 @@ namespace TrashCollectors.Models
             [Required]
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
-            [Required]
             [Display(Name = "Street Address")]
             public string StreetAddress { get; set; }
             [Required]

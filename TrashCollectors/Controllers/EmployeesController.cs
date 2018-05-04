@@ -93,7 +93,7 @@ namespace TrashCollectors.Controllers
                 db.BillingAccounts.Add(BillingAccount);
             }
             db.SaveChanges();
-            return RedirectToAction("Work");
+            return View("PickedUp");
 
         }
 
@@ -127,7 +127,7 @@ namespace TrashCollectors.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email", employee.UserId);
-            return View(employee);
+            return View("Index");
         }
 
         // GET: Employees/Delete/5

@@ -96,3 +96,4 @@ C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\bin\S
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.neednewmigrationforsomething.resources
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.CreatedBillingAccounttable.resources
 C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.deletedunneededinfoinemployeemodel.resources
+C:\Users\Meredith\Desktop\DCC\VisualStudio\TrashCollectors\TrashCollectors\obj\Debug\TrashCollectors.Migrations.updatedcustomermodel.resources

@@ -15,8 +15,8 @@ namespace TrashCollectors.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
         // GET: Customers
-        [Authorize]
         public ActionResult Index()
         {
             string userid = User.Identity.GetUserId();
@@ -29,19 +29,19 @@ namespace TrashCollectors.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Customer customer = db.Customers.Find(id);
+        //    if (customer == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(customer);
+        //}
 
         // GET: Customers/Create
         public ActionResult Create()
@@ -127,6 +127,64 @@ namespace TrashCollectors.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult ViewBalance()
+        {
+            string UserID = User.Identity.GetUserId();
+            Customer customer;
+            try
+            {
+                customer = (from row in db.Customers where row.UserId == UserID select row).First();
+            }
+            catch
+            {
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ViewBalance(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            BilingAccount billingAccount = db.BillingAccounts.Find(id);
+            if (billingAccount == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", billingAccount.Balance);
+            return View(billingAccount);
+        }
+
+
+        //public ActionResult SuspendServices(Building model)
+        //{
+        //    string UserID = User.Identity.GetUserId();
+        //    try
+        //    {
+        //        Manager manager = (from row in context.Managers where row.UserId == UserID select row).First();
+        //        context.Buildings.Add(model);
+        //        context.SaveChanges();
+        //        Building building = (from row in context.Buildings where row.ID == model.ID select row).First();
+        //        BuildingXManager junction = new BuildingXManager();
+        //        junction.Manager = manager;
+        //        junction.ManagerId = manager.ID;
+        //        junction.building = building;
+        //        junction.BuildId = model.ID;
+        //        context.BuildingManagerJunctions.Add(junction);
+        //        context.SaveChanges();
+        //        return RedirectToAction("Buildings");
+        //    }
+        //    catch
+        //    {
+        //        return RedirectToAction("Create");
+        //    }
+        //}
+
+
 
         protected override void Dispose(bool disposing)
         {
