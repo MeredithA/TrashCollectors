@@ -131,34 +131,11 @@ namespace TrashCollectors.Controllers
 
         public ActionResult ViewBalance()
         {
-            string UserID = User.Identity.GetUserId();
-            Customer customer;
-            try
-            {
-                customer = (from row in db.Customers where row.UserId == UserID select row).First();
-            }
-            catch
-            {
-                return RedirectToAction("Create");
-            }
-            return View();
+            string userID = User.Identity.GetUserId();
+            Customer currentCustomer = (from row in db.Customers where row.UserId == userID select row).FirstOrDefault();
+            BilingAccount model = (from row in db.BillingAccounts where row.CustomerId == currentCustomer.ID select row).FirstOrDefault();
+            return View(model);
         }
-        [HttpPost]
-        public ActionResult ViewBalance(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BilingAccount billingAccount = db.BillingAccounts.Find(id);
-            if (billingAccount == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", billingAccount.Balance);
-            return View(billingAccount);
-        }
-
 
         //public ActionResult SuspendServices(Building model)
         //{
