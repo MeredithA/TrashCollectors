@@ -2,10 +2,12 @@
 @{
     ViewBag.Title = "Work";
 }
+<head>
+
+</head>
 
 <h2>Work</h2>
 <h5>Your Work Zip Code Is @Model.Employee.ZipCode  </h5> <p>@Html.ActionLink("Change", "Edit", new { id = Model.Employee.ID })</p>
-
 @if (Model.Customers.Count > 0)
 {
     <table class="table">
@@ -66,3 +68,33 @@ else
 {
     <h6>You Have No Pick Ups Today</h6>
 }
+<div id="map"></div>
+<script>
+    var addresses = @Html.Raw(Json.Encode(Model.Customers));
+
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 15
+        });
+        for(i = 0; i < addresses.length; i++){
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': addresses[i].StreetAddress + " " + addresses[i].ZipCode }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        zoom:20
+                    });
+                   
+                } else {
+                    alert('Error' + status);
+                }
+            });
+        }
+      }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzuvbJXoXzl80ziut3AXFK5CtdFo71JeY&callback=initMap"
+        async defer></script>

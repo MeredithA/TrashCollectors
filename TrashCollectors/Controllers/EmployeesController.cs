@@ -71,8 +71,45 @@ namespace TrashCollectors.Controllers
             string userID = User.Identity.GetUserId();
             WorkViewModel model = new WorkViewModel();
             model.Employee = (from row in db.Employees where row.UserId == userID select row).FirstOrDefault();
-            model.Customers = (from row in db.Customers where row.ZipCode == model.Employee.ZipCode select row).ToList();
+            string today = DateTime.Now.DayOfWeek.ToString().ToLower();
+            List<Customer> customers = (from row in db.Customers where row.ZipCode == model.Employee.ZipCode && row.ScheduledPickUpDay.ToLower() == today select row).ToList();
+            model.Customers = new List<Customer>();
+            foreach(Customer customer in customers)
+            {
+                if (CheckIfCustomerActive(customer))
+                {
+                    model.Customers.Add(customer);
+                }
+            }
+            
             return View(model);
+        }
+
+        private bool CheckIfCustomerActive(Customer customer)
+        {
+            SuspendService suspension = (from x in db.SuspendServices where x.CustomerId == customer.ID select x).FirstOrDefault();
+            if (suspension != null)
+            {
+                if(suspension.StartDate != null && suspension.StartDate.Value.Ticks <= DateTime.Now.Ticks)
+                {
+                    if(suspension.EndDate == null || suspension.EndDate.Value.Ticks > DateTime.Now.Ticks)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public ActionResult PickUp(int? id)

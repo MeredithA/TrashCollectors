@@ -57,7 +57,7 @@
             @Html.DisplayFor(modelItem => item.ScheduledPickUpDay)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) | @Html.ActionLink("Suspend Service", "SuspendService", new { id = item.ID })
         </td>
     </tr>
 }

@@ -90,7 +90,7 @@ namespace TrashCollectors.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,Address,City,State,ZipCode,ScheduledPickUpDay")] Customer customer)
+        public ActionResult Edit([Bind(Include = "ID,UserId,FirstName,LastName,Address,StreetAdress,City,State,ZipCode,ScheduledPickUpDay")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -137,31 +137,41 @@ namespace TrashCollectors.Controllers
             return View(model);
         }
 
-        //public ActionResult SuspendServices(Building model)
-        //{
-        //    string UserID = User.Identity.GetUserId();
-        //    try
-        //    {
-        //        Manager manager = (from row in context.Managers where row.UserId == UserID select row).First();
-        //        context.Buildings.Add(model);
-        //        context.SaveChanges();
-        //        Building building = (from row in context.Buildings where row.ID == model.ID select row).First();
-        //        BuildingXManager junction = new BuildingXManager();
-        //        junction.Manager = manager;
-        //        junction.ManagerId = manager.ID;
-        //        junction.building = building;
-        //        junction.BuildId = model.ID;
-        //        context.BuildingManagerJunctions.Add(junction);
-        //        context.SaveChanges();
-        //        return RedirectToAction("Buildings");
-        //    }
-        //    catch
-        //    {
-        //        return RedirectToAction("Create");
-        //    }
-        //}
 
+        public ActionResult SuspendService(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            SuspendService suspendService = (from row in db.SuspendServices where row.CustomerId == id select row).FirstOrDefault();
+            if (suspendService == null)
+            {
+                suspendService = new SuspendService();
+                suspendService.CustomerId =(int)id;
+            }
+            //      we need a VM for the suspension form...
+            return View(suspendService);
+        }
 
+        [HttpPost]
+        public ActionResult SuspendService(SuspendService model)
+        {
+            string userID = User.Identity.GetUserId();
+            Customer currentCustomer = (from row in db.Customers where row.UserId == userID select row).FirstOrDefault();
+            SuspendService suspendService = (from row in db.SuspendServices where row.CustomerId == currentCustomer.ID select row).FirstOrDefault();
+            if (suspendService == null)
+            {
+                db.SuspendServices.Add(model);
+            }
+            else
+            {
+                suspendService.StartDate = model.StartDate;
+                suspendService.EndDate = model.EndDate;
+            }
+            db.SaveChanges();
+            return RedirectToAction ("index");
+        }
 
         protected override void Dispose(bool disposing)
         {

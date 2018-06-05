@@ -35,6 +35,7 @@ namespace TrashCollectors.Models
             [Required]
             [Display(Name = "Weekly Pick Up Day")]
             public string ScheduledPickUpDay { get; set; }
-        
+            [Display(Name = "Duration of Suspended Services")]
+            public string SuspensionDuration { get; set; }
     }
 }

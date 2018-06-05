@@ -36,6 +36,8 @@ namespace TrashCollectors.Models
 
         public DbSet<BilingAccount> BillingAccounts { get; set; }
 
+        public System.Data.Entity.DbSet<TrashCollectors.Models.SuspendService> SuspendServices { get; set; }
+
         //   public System.Data.Entity.DbSet<TrashCollectors.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
